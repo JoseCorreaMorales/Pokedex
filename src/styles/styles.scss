@@ -1,0 +1,49 @@
+@import 'theme.scss';
+
+$shadow: .2rem .1rem .1rem rgba(213, 92, 209, 0.5);
+
+::-webkit-scrollbar {
+    background: transparent;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.71);
+    border-radius: 20px;
+}
+
+body {
+    background: url('../assets/45200.png') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+custom-navbar {
+    background-color: transparent;
+}
+
+.tag {
+   /*  font-size: 1.5rem !important; */
+    cursor: pointer;
+    box-shadow: $shadow;
+}
+
+.card {
+    background:radial-gradient( circle 815px at 23.4% -21.8%,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 100.2% );;
+    box-shadow: $shadow;
+}
+
+.card .title {
+    color: #666;
+}
+
+
+
+.card-image .image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+   
+}
