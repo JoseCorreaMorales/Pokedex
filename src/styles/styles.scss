@@ -1,15 +1,20 @@
 @import 'theme.scss';
 
-$shadow: .2rem .1rem .1rem rgba(213, 92, 209, 0.5);
+$shadow: .2rem .1rem .1rem #d55cd180;
 
 ::-webkit-scrollbar {
-    background: transparent;
-    width: 7px;
+    background: #d55cd180;
+    width: 5px;
+   
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(128, 128, 128, 0.71);
-    border-radius: 20px;
+    background-image: linear-gradient( 109.6deg,  rgba(102,51,153,1) 11.2%, rgba(2,0,4,1) 91.1% );
+    
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient( 109.6deg,  rgb(86, 42, 131) 11.2%, rgb(13, 9, 17) 91.1% ); 
 }
 
 body {
@@ -32,7 +37,72 @@ custom-navbar {
 
 .card {
     background:radial-gradient( circle 815px at 23.4% -21.8%,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 100.2% );;
-    box-shadow: $shadow;
+    position: relative; 
+    box-shadow: 0 0 .1rem #fff,
+            0 0 .1rem #fff,
+            0 0 1.5rem #bc13fe,
+            0 0 0.5rem #bc13fe,
+            0 0 2rem #bc13fe,
+            inset 0 0 1rem #bc13fe; 
+}
+
+.card:hover  {
+    animation: pulsate 2s infinite alternate;
+}
+
+.card:hover .card-image__id {
+    z-index: 99;
+}
+
+
+::selection {
+    text-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe;
+}
+
+
+@keyframes pulsate {
+    
+    100% {
+  
+        text-shadow:
+        0 0 4px #fff, /*2  */
+        0 0 8px #fff,/* 4 */
+        0 0 12px #fff,/* 6 */
+        0 0 16px #bc13fe, /* 8 */
+        0 0 20px #bc13fe,/* 10 */
+        0 0 22px #bc13fe,/* 12 */
+        0 0 28px #bc13fe,/* 14 */
+        0 0 36px #bc13fe;/* 18 */
+    
+    }
+    
+    0% {
+  
+      text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 8px #bc13fe,
+      0 0 10px #bc13fe,
+      0 0 12px #bc13fe,
+      0 0 14px #bc13fe,
+      0 0 18px #bc13fe;
+  
+  }
+}
+
+.card .card-image__id {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    font-size: 5rem;
+    font-weight: bold;
 }
 
 .card .title {
