@@ -17,13 +17,14 @@ $shadow: .2rem .1rem .1rem #d55cd180;
     background-image: linear-gradient( 109.6deg,  rgb(86, 42, 131) 11.2%, rgb(13, 9, 17) 91.1% ); 
 }
 
-body {
+body, html {
     background: url('../assets/45200.png') no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
 }
+
 
 custom-navbar {
     background-color: transparent;
@@ -47,7 +48,7 @@ custom-navbar {
 }
 
 .card:hover  {
-    animation: pulsate 2s infinite alternate;
+    animation: pulsate 1.5s infinite alternate;
 }
 
 .card:hover .card-image__id {
