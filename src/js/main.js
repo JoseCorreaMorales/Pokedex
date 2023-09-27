@@ -7,8 +7,24 @@ for (let i = 1; i <= 12; i++) {
     
 }
 
+
+
  function showPokemon (data)  { 
-    console.log(data);
+  //let types  = data.types.map(type => type.type.name);
+  let types  = data.types.map((type) => {
+    return `<span class="tag is-${type.type.name}">${type.type.name}</span>`;
+  });
+  types = types.join("");
+  let stats  = data.stats.map(stat => stat.base_stat);
+
+  let abilities = data.abilities.map((ability) => {
+    return `<a href="#">#${ability.ability.name}</a>`;
+  });
+  abilities = abilities.join("");
+
+
+  let firstMove = data.moves.shift();
+  
     let columns = document.querySelector(".columns");
     columns.innerHTML += `
     <div class="column is-4-tablet is-3-desktop mb-6">
@@ -34,17 +50,16 @@ for (let i = 1; i <= 12; i++) {
 
         <div class="content">
           <div class="tags are-medium">
-            <span class="tag is-fire">Fire</span>
-            <span class="tag is-ground">Ground</span>
+            ${types}
           </div>
 
           <div class="tags stats">
-            <span class="tag is-white">HP: 100</span>
-            <span class="tag is-white">ATK: 100</span>
+            <span class="tag is-white"><strong>height:  </strong> ${data.height}</span>
+            <span class="tag is-white"><strong>weight: </strong> ${data.weight}</span>
           </div>
 
-          <a>@bulmaio</a>.
-          <a href="#">#css</a> <a href="#">#responsive</a>
+          <a>#${firstMove.move.name}</a>.
+          <a href="#">#${data.species.name}</a>&nbsp; ${abilities}
         </div>
       </div>
     </div>
