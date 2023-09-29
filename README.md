@@ -53,4 +53,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Resourses
 
 * [PokeAPI ](https://pokeapi.co/)
+* [Bulma css ](https://bulma.io/)
+* [Icon Icons ](https://icon-icons.com/)
  
