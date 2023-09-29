@@ -6,7 +6,7 @@ const pokemonList = document.querySelector(".columns");
 
 //let columns = document.querySelector(".columns");
 
-for (let i = 1; i <= 150; i++) {
+for (let i = 1; i <= 100; i++) {
   fetch(URL + i).then(res => res.json()).then(data => {
     showPokemon(data);
   });
@@ -82,7 +82,7 @@ pokeType.forEach(btn => btn.addEventListener("click", (e) => {
   const typeId = e.currentTarget.id;
   pokemonList.innerHTML = "";
 
-  for (let i = 1; i <= 12; i++) {
+  for (let i = 1; i <= 100; i++) {
     fetch(URL + i).then(res => res.json()).then(data => {
       //showPokemon(data);
 
